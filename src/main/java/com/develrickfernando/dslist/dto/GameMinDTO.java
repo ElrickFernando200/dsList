@@ -3,6 +3,7 @@ package com.develrickfernando.dslist.dto;
 
 
 import com.develrickfernando.dslist.entities.Game;
+import com.develrickfernando.dslist.projections.GameMinProjection;
 
 import java.util.Objects;
 
@@ -24,6 +25,13 @@ public class GameMinDTO {
         shortDescription = game.getShortDescription();
     }
 
+    public GameMinDTO(GameMinProjection game){
+        id = game.getId();
+        title = game.getTitle();
+        year = game.getYear();
+        imgUrl = game.getImgUrl();
+        shortDescription = game.getShortDescription();
+    }
 
 
     public Long getId(){

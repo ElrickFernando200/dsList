@@ -7,10 +7,8 @@ import com.develrickfernando.dslist.repositories.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class GameService {
@@ -25,6 +23,10 @@ public class GameService {
         return new GameDTO(game);
     }
 
+
+    public List<GameMinDTO> findByList(Long id){
+        return gameRepository.searchByList(id).stream().map(g -> new GameMinDTO(g)).toList();
+    }
 
     @Transactional(readOnly = true)
     public List<GameMinDTO> findAll(){
