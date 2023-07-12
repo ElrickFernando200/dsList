@@ -6,17 +6,17 @@ import com.develrickfernando.dslist.entities.Game;
 
 import java.util.Objects;
 
-public class GameMinDto {
+public class GameMinDTO {
     private Long id;
     private String title;
     private Integer year;
     private String  imgUrl;
     private String shortDescription;
 
-    public GameMinDto(){}
+    public GameMinDTO(){}
 
 
-    public GameMinDto(Game game){
+    public GameMinDTO(Game game){
         id = game.getId();
         title = game.getTitle();
         year = game.getYear();
@@ -78,7 +78,7 @@ public class GameMinDto {
         if (obj == null) return false;
         if(obj == this) return true;
         if (this.getClass() != obj.getClass()) return false;
-        GameMinDto gameDto = (GameMinDto) obj;
+        GameMinDTO gameDto = (GameMinDTO) obj;
         if (id.equals(gameDto.getId())) return true;
         return false;
     }
